@@ -1,0 +1,29 @@
+.chatBox{
+    background-color: antiquewhite;
+}
+
+.profile{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: ghostwhite;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: ;*/
+}
+
+.chatContainer{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 5px;
+}
+.chatBox{
+    padding: 10px;
+}

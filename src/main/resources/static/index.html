@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chat my friend</title>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            ChatAndSons
+        </a>
+    </div>
+</nav>
+
+<form class="form2">
+    <div class="mx-auto" style="width: 200px; margin-top: 50px; " >
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name"  placeholder="Raju">
+    </div>
+        <button class="connect"  type="submit">connect</button>
+    </div>
+
+</form>
+
+<form class="form" hidden="hidden">
+    <div class="mx-auto" style="width: 200px; margin-top: 50px; " >
+
+    <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <input type="email" class="form-control" id="message" placeholder="hi">
+    </div>
+
+
+    <button type="submit" id="submit" >send</button>
+    <button class="disconnect" type="submit">disconnect</button>
+    </div>
+
+</form>
+
+
+
+
+<div class="chatBox">
+
+</div>
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
