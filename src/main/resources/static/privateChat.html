@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Private Chat</title>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <link rel="stylesheet" href="privateChat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<form class="connectForm">
+    <label>Name: <input class="sender" type="text"></label>
+    <button type="submit" class="connect">connect</button>
+</form>
+
+<div class="receiverForm" hidden="hidden">
+    <label>Recipient: <input class="receiver" type="text"></label>
+    <button type="submit" class="receiverSubmit">add friend</button>
+
+</div>
+
+<div class="contentBox">
+    <div class="friendBox"></div>
+    <div class="chatWindow">
+    <div class="chatBox"></div>
+    <form class="messageForm" hidden="hidden">
+        <div class="innerMessageForm"><input class="message" type="text" placeholder="type a message">
+            <button type="submit" class="messageSubmit">send</button></div>
+
+    </form>
+    </div>
+</div>
+<script src="private.js"></script>
+</body>
+</html>

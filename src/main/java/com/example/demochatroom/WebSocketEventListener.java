@@ -1,13 +1,12 @@
 package com.example.demochatroom;
 
+import com.example.demochatroom.messages.Message;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
-import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.stereotype.Component;
-import org.springframework.web.socket.messaging.SessionConnectEvent;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
 @Component
@@ -38,7 +37,7 @@ public class WebSocketEventListener {
         String username=(String) stompHeaderAccessor.getSessionAttributes().get("user");
         String color=(String) stompHeaderAccessor.getSessionAttributes().get("color");
         if(username!=null){
-            var obj=Message.builder()
+            var obj= Message.builder()
                     .sender(username)
                     .message("leaves the fray")
                     .color(color)

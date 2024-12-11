@@ -1,6 +1,6 @@
 
 const stompClient=new StompJs.Client({
-    brokerURL: 'ws://localhost:8080/chat'
+    brokerURL: 'ws://localhost:8081/chat'
 })
 
 
@@ -39,19 +39,13 @@ stompClient.onConnect=(frame)=>{
 
 
     stompClient.subscribe("/topics/hello",(message)=>{
-
+        console.log("I have recieved it yay")
         const parsedMessage=JSON.parse(message.body)
         console.log(parsedMessage)
 
         displayMessage(parsedMessage)
     })
 
-    stompClient.subscribe("/queue/reply/specific-user",(message)=>{
-        const parsedMessage=JSON.parse(message.body)
-
-
-        displayMessage(parsedMessage)
-    })
 }
 const sendMessage=(message)=>{
 
@@ -61,12 +55,7 @@ const sendMessage=(message)=>{
     })
 }
 
-const sendPrivateMessage=(message)=>{
-    stompClient.publish({
-        destination: "/user/private",
-        body:JSON.stringify(message)
-    })
-}
+
 
 const connect=()=>{
         usernameVal=document.querySelector("#name").value

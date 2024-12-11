@@ -1,12 +1,13 @@
-.chatBox{
-    background-color: antiquewhite;
-}
-
-.profile{
+/*body{*/
+/*    color:mediumpurple;*/
+/*    background-color: black;*/
+/*}*/
+.chatProfile{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    color: ghostwhite;
+    border: purple 3px solid;
+    /*color: ghostwhite;*/
     font-size: 35px;
     font-weight: bold;
     text-align: center;
@@ -26,4 +27,15 @@
 }
 .chatBox{
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contentBox{
+    display: flex;
+}
+.receiverForm{
+    display: flex;
+    flex-direction: column;
 }
