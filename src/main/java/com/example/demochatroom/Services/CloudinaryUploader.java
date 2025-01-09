@@ -24,7 +24,7 @@ public class CloudinaryUploader {
     }
 
     public Map upload(File file) throws IOException {
-        Dotenv dotenv = Dotenv.configure().directory("/app").ignoreIfMalformed().ignoreIfMissing().load();
+        Dotenv dotenv = Dotenv.configure().load();
         this.cloudinary = new Cloudinary(dotenv.get("CLOUDINARY_URL"));
         Map params1 = ObjectUtils.asMap(
                 "use_filename", true,

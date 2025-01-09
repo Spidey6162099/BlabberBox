@@ -6,7 +6,7 @@ let sender=null
 
 
 export const stompClient=new StompJs.Client({
-        brokerURL: 'wss://chatroomapp-2b9l.onrender.com/chat'
+        brokerURL: 'ws://localhost:8080/chat'
     })
 
 
