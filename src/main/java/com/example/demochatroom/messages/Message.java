@@ -1,4 +1,4 @@
-package com.example.demochatroom;
+package com.example.demochatroom.messages;
 
 import lombok.*;
 

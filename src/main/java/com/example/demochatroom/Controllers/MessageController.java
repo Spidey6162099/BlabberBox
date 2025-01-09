@@ -1,12 +1,9 @@
 package com.example.demochatroom.Controllers;
 
-import com.example.demochatroom.Message;
-import com.sun.tools.jconsole.JConsoleContext;
-import org.apache.logging.log4j.message.SimpleMessage;
+import com.example.demochatroom.messages.Message;
+import com.example.demochatroom.messages.PrivateMessage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.converter.SimpleMessageConverter;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -24,12 +21,7 @@ public class MessageController {
     }
 
 
-    @MessageMapping("/send")
-    @SendTo("/topics/hello")
-    public Message sendMessage(@Payload Message message){
 
-       return message;
-    }
 
     @MessageMapping("/addUser")
     @SendTo("/topics/hello")
@@ -40,8 +32,7 @@ public class MessageController {
         return new Message(message.getSender(),"joins the fray",message.getColor());
     }
     @MessageMapping("/private")
-
-    public void sendSpecific(Message message){
-//        messagingTemplate.convertAndSendToUser(message.getRecipient(),"/queue/reply",message);
+    public void sendSpecific(PrivateMessage privateMessage){
+        messagingTemplate.convertAndSendToUser(privateMessage.getReceiver(),"/queue/message",privateMessage.getMessage());
     }
 }

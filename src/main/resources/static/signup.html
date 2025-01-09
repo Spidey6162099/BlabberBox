@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="errorThing"></div>
+<form class="signupForm">
+    <label>username:<input type="text" name="username" id="username" required></label>
+    <label>password:<input type="password" name="password" id="password" required></label>
+    <label>email:i<input type="email" name="email" id="email"></label>
+    <button type="submit" class="signupbtn">sign up</button>
+    <div>alrdeady have an account? <a href="https://chatroomapp-2b9l.onrender.com/login">log in</a></div>
+</form>
+<script>
+    const loginform=document.querySelector(".signupForm")
+    loginform.addEventListener("submit", async (e)=>{
+        e.preventDefault()
+        const username=document.querySelector("#username").value
+        const password=document.querySelector("#password").value
+        const email=document.querySelector("#email").value
+
+        const newObj={
+            username,password,email
+        }
+        const response =await fetch("signup/user",{
+            method:"POST",
+            headers: { "Content-Type": "application/json" },
+            body:JSON.stringify(newObj)
+        })
+
+        if(!response.ok){
+            const errorThing=document.querySelector(".errorThing").textContent="whoops something went wrong"
+        }
+        else{
+            window.location.replace("/login")
+        }
+
+    })
+</script>
+</body>
+</html>

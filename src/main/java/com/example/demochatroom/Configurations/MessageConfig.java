@@ -14,14 +14,15 @@ public class MessageConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.setUserDestinationPrefix("/user");
         config.setApplicationDestinationPrefixes("/app");
-        config.enableSimpleBroker("/user","/topic");
+        config.enableSimpleBroker("/queue","/topic");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry config) {
 
-        config.addEndpoint("/chat").withSockJS();
-        config.addEndpoint("/chat");
+//        config.addEndpoint("/chat")
+        config.addEndpoint("/chat")
+                .setAllowedOrigins("https://chatapp-svau.onrender.com");
     }
 }
 

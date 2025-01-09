@@ -1,0 +1,112 @@
+body{
+    font-family: "Roboto", sans-serif;
+    margin: 0px;
+    color: #F5F5F5;
+    background-color: #1B1B1B ;
+}
+.chatProfile{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: purple 3px solid;
+    background-color:#adadc9 ;
+    /*color: ghostwhite;*/
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: ;*/
+}
+.chat{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chatContainer{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 5px;
+}
+.chatBox{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.friendBox{
+    background-color: #3d6640;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.contentBox{
+    background-color: #1B1B1B;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100vh;
+}
+.messageForm{
+    color: #F5F5F5;
+    width: 100%;
+    background-color:#4e5352;
+}
+
+.innerMessageForm{
+    display: flex;
+    gap: 5px;
+    font-size: 30px;
+    border-style: none;
+}
+
+.innerMessageForm>button{
+    width: min-content;
+    flex-grow: 0;
+    color: #F5F5F5;
+    background-color:#4e5352;
+    padding: 5px;
+}
+::placeholder{
+    color: #F5F5F5;
+    opacity: 0.5;
+    font-size: 15px;
+}
+.innerMessageForm>input{
+    flex-grow: 1;
+    background-color:#4e5352;
+    color: #F5F5F5;
+    padding: 5px;
+}
+.innerMessageForm>input:focus{
+    border-style: none;
+}
+
+.chatWindow{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.friendDiv{
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #006241;
+}
+.friendDiv:focus{
+    border:2px solid #606060;
+}
+.friendDiv:hover{
+    border: 2px solid #18453B;
+}

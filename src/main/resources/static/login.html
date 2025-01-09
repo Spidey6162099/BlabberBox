@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<div class="errorThing"></div>
+<form class="loginForm" action="/login" method="post">
+    <label>username:<input type="text" name="username" id="username" required></label>
+    <label>password:<input type="password" name="password" id="password" required></label>
+    <button type="submit" class="loginbtn">Log In</button>
+    <div>new user? <a href="/signup">sign up</a></div>
+</form>
+<a href="/oauth2/authorization/github">continue with github</a>
+
+</body>
+</html>

@@ -3,6 +3,11 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+secret.properties
+.env
+compose.yaml
+Dockerfile
+application.properties
 
 ### STS ###
 .apt_generated
