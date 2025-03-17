@@ -22,7 +22,7 @@ public class MessageConfig implements WebSocketMessageBrokerConfigurer {
 
 //        config.addEndpoint("/chat")
         config.addEndpoint("/chat")
-                .setAllowedOrigins("https://chatapp-svau.onrender.com");
+                .setAllowedOrigins("https://chatapp-svau.onrender.com","http://localhost:8080/");
     }
 }
 

@@ -52,11 +52,23 @@ export const addChat=(sender1,receiver1,message)=>{
     const splitMessage=message.split('|')
 
     let chatContent
+
+
+    //checking if link or not
     if(splitMessage[0]==='link'&&message.includes('|')&&splitMessage.length===2){
-        chatContent = document.createElement('a');
-        chatContent.href=splitMessage[1]
-        chatContent.target="_blank"
-        chatContent.textContent="media link"
+        chatContent = document.createElement('img');
+        chatContent.src=splitMessage[1]
+        chatContent.style.height="250px";
+        chatContent.style.width="250px";
+
+        chatContent.addEventListener('click',(e)=>{
+            //basically make it redirect to the link
+            window.open(splitMessage[1],"_blank")
+
+        })
+        // chatContent.href=splitMessage[1]
+        // chatContent.target="_blank"
+        // chatContent.textContent="media link"
     }
     else {
         chatContent = document.createElement('div');
@@ -64,6 +76,7 @@ export const addChat=(sender1,receiver1,message)=>{
 
         chatContent.style.borderRadius = "5px"
     }
+    //now checking who send the messaage
     if(sender1===sender){
         // chat.style.marginLeft='100px'
         chat.appendChild(chatContent)

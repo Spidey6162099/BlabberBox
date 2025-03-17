@@ -53,7 +53,6 @@ public class SecurityController {
     public ResponseEntity<Map<String,Object>> getAuthenticatedUser(@AuthenticationPrincipal Object principal){
         String user=null;
         if(principal instanceof OAuth2User){
-             user= ((OAuth2User)(principal)).getAttribute("name");
             }
         else if(principal instanceof UserDetails) {
             user=(((UserDetails) principal).getUsername());
